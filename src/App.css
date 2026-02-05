@@ -1,12 +1,12 @@
 body{
-  color: lightblue !important ;
-  background-color: aliceblue !important; 
+  color: thistle !important ;
+  background-color: rgb(246, 236, 243) !important; 
 }
 
 
 
 .todo-item{
-  border: 1px solid lightblue;
+  border: 1px solid thistle;
   background-color: white;
   display: flex;
   justify-content: space-between;
@@ -18,13 +18,13 @@ body{
 .add-item-row{
   margin-top:50px !important;
   margin-bottom: 30px;
+  display: flex;
+  align-items: center;
 }
 .input-box{
   padding: 10px;
   width:100%;
-  border: 1px solid lightblue;
-  
-  
+  border: 3px solid palevioletred;
 }
 .input-box:focus{
   outline: none;
@@ -33,26 +33,32 @@ body{
   height: 40px;
   width: 100%;
   border: none;
-  background-color: lightblue;
+  background-color: palevioletred;
   color: white;
 }
 .button-add:hover{
   background-color: white;
-  color: lightblue;
-  border: 2px solid lightblue;
+  color: thistle;
+  border: 2px solid thistle;
 }
 .button-delete{
   background-color: white;
-  border: 2px solid lightblue;
-  color: lightblue;
+  border: 2px solid thistle;
+  color: thistle;
   margin: 10px;
 }
 .button-delete:hover{
-  background-color: lightblue;
+  background-color: thistle;
   color: #ffffff;
 }
 
 .item-complete{
-  background-color: gainsboro;
+  background-color: thistle;
   color:white;
+  text-decoration: line-through;
+}
+.item-complete .button-delete {
+  background-color: thistle;
+  color: whitesmoke;
+  border: 2px solid whitesmoke;
 }
