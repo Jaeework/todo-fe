@@ -13,7 +13,7 @@ const TodoBoard = ({todoList, deleteTask, toggleComplete}) => {
               deleteTask={deleteTask}
               toggleComplete={toggleComplete}
               />)
-          : <h2>There is no Item to show</h2>
+          : <h2 className="empty-message">There is no Item to show</h2>
         }
       </div>
     </div>
