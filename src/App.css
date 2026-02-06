@@ -1,64 +1,90 @@
 body{
-  color: thistle !important ;
-  background-color: rgb(246, 236, 243) !important; 
+  background-image: url("https://i.namu.wiki/i/NOZvdxwC1fH2I8VvV0HDGBfBYpCHWkY0WjLG9DAnR2L669TZFRNkasQTcxgicmnd1vtRLdqsOnW-AAC_r_g8qw.webp");
+  background-size: 100% 200%;
+  background-position: top center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
-
-
+.todo-board-container {
+  background-color: white;
+  border-radius: 15px;
+  min-height: 80vh;
+  padding: 2rem;
+}
+.board-title {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: bolder;
+}
 .todo-item{
-  border: 1px solid thistle;
   background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .todo-content{
-  padding:1em
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+.item-checkbox {
+  width: 18px;
+  height: 18px;
+  /* accent-color: #495057; */
+  accent-color: #e63946;
+}
+.todo-item-index {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+ .todo-text {
+  padding: 1em;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.item-complete {
+  color: gray;
+  text-decoration: line-through;
 }
 .add-item-row{
   margin-top:50px !important;
   margin-bottom: 30px;
   display: flex;
   align-items: center;
+  background-color: white;
+  width: 80%;
+  justify-self: center;
+  border-bottom: 2px solid black;
+  font-size: 1.2rem;
 }
 .input-box{
   padding: 10px;
   width:100%;
-  border: 3px solid palevioletred;
+  border: none;
+  font-family: 'Arial Narrow', Arial, sans-serif;
+  font-style: italic;
 }
 .input-box:focus{
   outline: none;
 }
 .button-add{
-  height: 40px;
   width: 100%;
   border: none;
-  background-color: palevioletred;
-  color: white;
+  background-color: transparent;
+  color: black;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: italic;
 }
 .button-add:hover{
-  background-color: white;
-  color: thistle;
-  border: 2px solid thistle;
+  color: gray;
 }
 .button-delete{
   background-color: white;
-  border: 2px solid thistle;
-  color: thistle;
+  border: 1px solid black;
+  border-radius: 10px;
+  color: black;
   margin: 10px;
 }
 .button-delete:hover{
-  background-color: thistle;
-  color: #ffffff;
-}
-
-.item-complete{
-  background-color: thistle;
-  color:white;
-  text-decoration: line-through;
-}
-.item-complete .button-delete {
-  background-color: thistle;
-  color: whitesmoke;
-  border: 2px solid whitesmoke;
+  background-color: gainsboro;
+  color: black;
 }

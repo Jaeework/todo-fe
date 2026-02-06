@@ -76,7 +76,7 @@ function App() {
   return (
     <Container>
       <Row className="add-item-row">
-        <Col xs={12} sm={10}>
+        <Col xs={9} sm={10}>
           <input
             type="text"
             placeholder="Add a new task"
@@ -86,7 +86,7 @@ function App() {
             onKeyUp={handleKeyDown}
           />
         </Col>
-        <Col xs={12} sm={2}>
+        <Col xs={3} sm={2}>
           <button className="button-add" onClick={addTask}>
             ADD
           </button>
