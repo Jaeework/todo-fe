@@ -1,10 +1,11 @@
 import TodoItem from "./TodoItem"
+import styles from "./TodoBoard.module.css";
 
 const TodoBoard = ({todoList, deleteTask, toggleComplete}) => {
   return (
-    <div className="todo-board-container">
-      <div className="todo-board">
-        <h2 className="board-title">Todo List</h2>
+    <div className={styles.todoBoardContainer}>
+      <div className={styles.todoBoard}>
+        <h2 className={styles.boardTitle}>Todo List</h2>
         {todoList.length > 0 
           ? todoList.map((item, idx) => 
             <TodoItem 
@@ -13,7 +14,7 @@ const TodoBoard = ({todoList, deleteTask, toggleComplete}) => {
               deleteTask={deleteTask}
               toggleComplete={toggleComplete}
               />)
-          : <h2 className="empty-message">There is no Item to show</h2>
+          : <h2 className={styles.emptyMessage}>There is no Item to show</h2>
         }
       </div>
     </div>

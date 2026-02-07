@@ -1,0 +1,52 @@
+.todoItem {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todoContent {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+.itemCheckbox {
+    width: 18px;
+    height: 18px;
+    /* accent-color: #495057; */
+    accent-color: #e63946;
+}
+
+.todoItemIndex {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.todoText {
+    padding: 1em;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.itemComplete {
+    color: gray;
+    text-decoration: line-through;
+}
+
+.buttonDelete {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 45px;
+    color: black;
+    margin: 10px;
+    transition: all 0.1s ease;
+}
+
+.buttonDelete:hover {
+    background-color: gainsboro;
+    color: black;
+}
+
+.buttonDelete:active {
+    transform: scale(0.95) translateY(2px);
+}
