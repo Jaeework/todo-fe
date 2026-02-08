@@ -60,7 +60,7 @@ const SigninPage = () => {
             Signin
           </Button>
           <span>
-            계정이 없다면? <Link to="/register">회원가입 하기</Link>
+            Don't have an account? <Link to="/signup">Create an account</Link>
           </span>
         </div>
       </Form>
