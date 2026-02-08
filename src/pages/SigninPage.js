@@ -1,74 +1,41 @@
-import { useState } from "react";
-import Form from "react-bootstrap/Form";
-
-import { Link, useNavigate } from "react-router-dom";
-import api from '../utils/api';
-import { Col, Row } from 'react-bootstrap';
+import { useNavigate } from "react-router-dom";
+import api from "../utils/api";
+import AuthForm from "../components/AuthForm";
 
 const SigninPage = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [user, setUser] = useState(null);
   const navigate = useNavigate();
-  
-  const handleSignin = async (event) => {
-    event.preventDefault();
-    try {
-      if (!email || !password) {
-        throw new Error("Please enter both email and password")
-      }
-      const response = await api.post("/user/signin", {email, password});
-      if (response.status === 200) {
-        setUser(response.data.user);
-        sessionStorage.setItem("token", response.data.token);
-        api.defaults.headers["authorization"] = "Bearer " + response.data.token;
-        setError("");
-        navigate("/");
-      } else {
-        throw new Error(response.message);
-      }
-    } catch (error) {
-      setError(error.message);
+  const fields = [
+    { name: "email", label: "Email address", type: "email", placeholder: "Enter email", controlId: "formBasicEmail" },
+    { name: "password", label: "Password", type: "password", placeholder: "Enter password", controlId: "formBasicPassword" }
+  ];
+
+  const handleSignin = async (formData) => {
+    const { email, password } = formData;
+
+    if (!email || !password) {
+      throw new Error("Please enter both email and password");
+    }
+
+    const response = await api.post("/user/signin", { email, password });
+
+    if (response.status === 200) {
+      sessionStorage.setItem("token", response.data.token);
+      api.defaults.headers["authorization"] = "Bearer " + response.data.token;
+      navigate("/");
+    } else {
+      throw new Error(response.message);
     }
   };
 
   return (
-    <div className="display-center">
-      {error && <div className="error-message">{error}</div>}
-      <Form className="login-box" onSubmit={handleSignin}>
-        <h1>Sign in</h1>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="Enter email"
-            onChange={(event) => setEmail(event.target.value)}
-          />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Password"
-            onChange={(event) => setPassword(event.target.value)}
-          />
-        </Form.Group>
-        <Row className="button-box">
-          <Col xs={12} sm={2}>
-            <button type="submit" className="button-primary">
-              Signin
-            </button>
-          </Col>
-          <Col xs={12} sm={10}>
-            <span>
-              Don't have an account? <Link to="/signup">Create an account</Link>
-            </span>
-          </Col>
-        </Row>
-      </Form>
-    </div>
+    <AuthForm
+      title="Sign in"
+      fields={fields}
+      onSubmit={handleSignin}
+      buttonText="Sign in"
+      linkText="Don't have an account?"
+      linkTo="/signup"
+    />
   );
 };
 
