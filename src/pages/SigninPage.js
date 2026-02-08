@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
 import { Link, useNavigate } from "react-router-dom";
 import api from '../utils/api';
+import { Col, Row } from 'react-bootstrap';
 
 const SigninPage = () => {
   const [email, setEmail] = useState("");
@@ -35,7 +35,7 @@ const SigninPage = () => {
 
   return (
     <div className="display-center">
-      {error && <div>{error}</div>}
+      {error && <div className="error-message">{error}</div>}
       <Form className="login-box" onSubmit={handleSignin}>
         <h1>Sign in</h1>
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -55,14 +55,18 @@ const SigninPage = () => {
             onChange={(event) => setPassword(event.target.value)}
           />
         </Form.Group>
-        <div className="button-box">
-          <Button type="submit" className="button-primary">
-            Signin
-          </Button>
-          <span>
-            Don't have an account? <Link to="/signup">Create an account</Link>
-          </span>
-        </div>
+        <Row className="button-box">
+          <Col xs={12} sm={2}>
+            <button type="submit" className="button-primary">
+              Signin
+            </button>
+          </Col>
+          <Col xs={12} sm={10}>
+            <span>
+              Don't have an account? <Link to="/signup">Create an account</Link>
+            </span>
+          </Col>
+        </Row>
       </Form>
     </div>
   );

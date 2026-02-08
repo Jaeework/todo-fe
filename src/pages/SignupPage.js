@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import api from "../utils/api";
 import { Link, useNavigate } from "react-router-dom";
+import { Col, Row } from 'react-bootstrap';
 
 const SignupPage = () => {
   const [name, setName] = useState("");
@@ -36,7 +36,7 @@ const SignupPage = () => {
 
   return (
     <div className="display-center">
-      {error && <div>{error}</div>}
+      {error && <div className="error-message">{error}</div>}
       <Form className="login-box container" onSubmit={handleSubmit}>
         <h1>Sign up</h1>
         <Form.Group className="mb-3" controlId="formName">
@@ -76,12 +76,18 @@ const SignupPage = () => {
         </Form.Group>
 
         <div className="button-box">
-          <Button type="submit" className="button-primary">
-            Submit
-          </Button>
-          <span>
-            Already have an account? <Link to="/signin">Sign in</Link>
-          </span>
+          <Row className="button-box">
+            <Col xs={12} sm={2}>
+              <button type="submit" className="button-primary">
+                Submit
+              </button>
+            </Col>
+            <Col xs={12} sm={10}>
+              <span>
+                Already have an account? <Link to="/signin">Sign in</Link>
+              </span>
+            </Col>
+          </Row>
         </div>
       </Form>
     </div>

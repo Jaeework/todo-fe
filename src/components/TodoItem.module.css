@@ -36,15 +36,16 @@
 .buttonDelete {
     background-color: white;
     border: 1px solid black;
-    border-radius: 45px;
+    border-radius: 10px;
     color: black;
     margin: 10px;
     transition: all 0.1s ease;
 }
 
 .buttonDelete:hover {
-    background-color: gainsboro;
-    color: black;
+    background-color: lightblue;
+    color: #ffffff;
+    border: 1px solid lightblue;
 }
 
 .buttonDelete:active {

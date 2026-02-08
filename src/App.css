@@ -7,14 +7,21 @@ body{
 }
 
 .login-box{
-  border:1px solid lightblue;
+  border-radius: 45px;
   max-width: 600px;
-  width: 100%;
+  width: 90vw;
   background-color: white;
-  padding: 20px;
+  padding: 2rem;
+}
+.login-box h1 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .login-box label{
+  font-family: 'Arial Narrow', Arial, sans-serif;
   font-weight: 700;
+}
+.login-box .form-control {
+  font-family: 'Arial Narrow', Arial, sans-serif;
 }
 
 .display-center{
@@ -23,16 +30,36 @@ body{
   justify-content: center;
   align-items: center;
   height: 100vh;
-  
 }
 
 .button-box{
-  display:flex;
-  justify-content: space-between
+  /* display:flex; */
+  /* justify-content: space-between; */
+  gap: 1rem;
 }
 
 .button-primary{
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  color: black;
+  transition: all 0.1s ease;
+  height: 35px;
+}
+.button-primary:hover {
   background-color: lightblue;
+  border: 1px solid lightblue;
   color: #ffffff;
-  border:none;
+}
+.button-primary:active {
+  transform: scale(0.95) translateY(2px);
+}
+
+.error-message {
+  text-align: center;
+  color: #e63946;
+  font-family: 'Arial Narrow', Arial, sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
