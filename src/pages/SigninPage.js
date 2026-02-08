@@ -1,8 +1,8 @@
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import api from "../utils/api";
 import AuthForm from "../components/AuthForm";
 
-const SigninPage = () => {
+const SigninPage = ({ user, setUser }) => {
   const navigate = useNavigate();
   const fields = [
     { name: "email", label: "Email address", type: "email", placeholder: "Enter email", controlId: "formBasicEmail" },
@@ -19,6 +19,7 @@ const SigninPage = () => {
     const response = await api.post("/user/signin", { email, password });
 
     if (response.status === 200) {
+      setUser(response.data.user);
       sessionStorage.setItem("token", response.data.token);
       api.defaults.headers["authorization"] = "Bearer " + response.data.token;
       navigate("/");
@@ -26,6 +27,8 @@ const SigninPage = () => {
       throw new Error(response.message);
     }
   };
+
+  if (user) return <Navigate to="/" />;
 
   return (
     <AuthForm

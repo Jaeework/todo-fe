@@ -36,7 +36,7 @@ const AuthForm = ({
       <Form className={styles.formBox} onSubmit={handleSubmit}>
         <h1>{title}</h1>
         {fields.map((field) => (
-          <Form.Group className="mb-3" controlId={field.controlId}>
+          <Form.Group className="mb-3" key={field.name} controlId={field.controlId}>
             <Form.Label>{field.label}</Form.Label>
             <Form.Control
               name={field.name}
