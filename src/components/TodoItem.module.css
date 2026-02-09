@@ -5,7 +5,7 @@
     align-items: center;
 }
 
-.todoContent {
+.leftSection {
     display: flex;
     justify-content: start;
     align-items: center;
@@ -23,9 +23,16 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+.todoContent {
+    padding: 1rem;
+}
+
 .todoText {
-    padding: 1em;
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.author {
+    font-size: small;
+    color: #495057;
 }
 
 .itemComplete {
