@@ -2,12 +2,14 @@ import { useState } from "react";
 import api from '../utils/api';
 
 export const useTasks = () => {
+  const [filter, setFilter] = useState("all");
   const [todoList, setTodoList] = useState([]);
   const [todoValue, setTodoValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const getTasks = async () => {
     try {
+      setIsLoading(true);
       const response = await api.get("/tasks");
       setTodoList(response.data.data);
     } catch (error) {
@@ -15,12 +17,16 @@ export const useTasks = () => {
     } finally {
       setIsLoading(false);
     }
-    
   };
+  const getFilteredList = () => {
+    if (filter === "all") return todoList;
+    if (filter === "ongoing") return todoList.filter(item => !item.isComplete);
+    if (filter === "completed") return todoList.filter(item => item.isComplete);
+    return todoList;
+  }
   const addTask = async () => {
     if (!todoValue) return;
     try {
-      setIsLoading(true);
       const response = await api.post("/tasks", {
         task: todoValue,
         isComplete: false,
@@ -34,13 +40,10 @@ export const useTasks = () => {
       }
     } catch (error) {
       console.log("error", error);
-    } finally {
-      setIsLoading(false);
     }
   };
   const deleteTask = async (id) => {
     try {
-      setIsLoading(true);
       const response = await api.delete(`/tasks/${id}`);
 
       if (response.status === 200) {
@@ -50,13 +53,10 @@ export const useTasks = () => {
       }
     } catch (error) {
       console.log("error", error);
-    } finally {
-      setIsLoading(false);
     }
   };
   const toggleComplete = async (item) => {
     try {
-      setIsLoading(true);
       const response = await api.put(`/tasks/${item._id}`, {
         isComplete: !item.isComplete,
       });
@@ -68,13 +68,13 @@ export const useTasks = () => {
       }
     } catch (error) {
       console.log("error", error);
-    } finally {
-      setIsLoading(false);
     }
   };
 
   return {
-    todoList,
+    filter,
+    setFilter,
+    todoList: getFilteredList(),
     todoValue,
     isLoading,
     setTodoValue,

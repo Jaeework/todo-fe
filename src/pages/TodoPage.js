@@ -11,6 +11,8 @@ import { useTasks } from '../hooks.js/useTasks';
 
 const TodoPage = ({ setUser }) => {
   const {
+    filter,
+    setFilter,
     todoList,
     todoValue,
     isLoading,
@@ -61,10 +63,12 @@ const TodoPage = ({ setUser }) => {
         </Col>
       </Row>
 
-      <TodoBoard 
+      <TodoBoard
         todoList={todoList} 
         deleteTask={deleteTask} 
         toggleComplete={toggleComplete}
+        filter={filter}
+        setFilter={setFilter} 
         isLoading={isLoading}
         />
     </Container>

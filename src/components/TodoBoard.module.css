@@ -13,6 +13,28 @@
   flex-shrink: 0;
   margin-bottom: 1rem;
 }
+.tabContainer {
+  display: flex;
+}
+.tabs {
+  font-size: small;
+  padding: 0 1rem;
+  border-top: solid 1px black;
+  border-left: solid 1px black;
+  border-right: solid 1px black;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.tabs.active {
+  background-color: black;
+  color: white;
+}
+.borderLine {
+  height: 1px;
+  background-color: black;
+}
 .todoBoard {
   flex: 1;
   overflow-y: auto;
