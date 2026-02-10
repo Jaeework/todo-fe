@@ -5,13 +5,13 @@
   padding: 2rem;
 }
 .boardTitle {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Anton", 'Arial Narrow Bold', sans-serif;
   font-weight: bolder;
 }
 .emptyMessage {
   text-align: center;
   color: #6c757d;
-  font-family: 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Arial Narrow', "Roboto Condensed", Arial, sans-serif;
   font-style: italic;
   font-weight: 300;
   margin-top: 3rem;

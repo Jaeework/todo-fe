@@ -20,7 +20,7 @@
 }
 
 .todoItemIndex {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact, Haettenschweiler, "Anton", 'Arial Narrow Bold', sans-serif;
 }
 
 .todoContent {
@@ -43,7 +43,7 @@
 .buttonDelete {
     background-color: white;
     border: 1px solid black;
-    border-radius: 10px;
+    border-radius: 20px;
     color: black;
     margin: 10px;
     transition: all 0.1s ease;

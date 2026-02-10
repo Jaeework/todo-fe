@@ -11,7 +11,7 @@
   padding: 0.5rem;
   text-align: center;
   color: #e63946;
-  font-family: 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Arial Narrow', "Roboto Condensed", Arial, sans-serif;
   font-style: italic;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -25,14 +25,14 @@
   padding: 2rem;
 }
 .formBox h1 {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Anton", 'Arial Narrow Bold', sans-serif;
   margin-bottom: 1rem;
 }
 .formBox label{
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Anton", 'Arial Narrow Bold', sans-serif;
 }
 .formBox :global(.form-control) {
-  font-family: 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Arial Narrow', "Roboto Condensed", Arial, sans-serif;
 }
 
 .buttonBox {
