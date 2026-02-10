@@ -1,7 +1,7 @@
-import TodoItem from "./TodoItem"
+import TodoItem from "./TodoItem";
 import styles from "./TodoBoard.module.css";
 
-const TodoBoard = ({todoList, deleteTask, toggleComplete}) => {
+const TodoBoard = ({ todoList, deleteTask, toggleComplete, isLoading }) => {
   return (
     <div className={styles.todoBoardContainer}>
       <h2 className={styles.boardTitle}>Todo List</h2>
