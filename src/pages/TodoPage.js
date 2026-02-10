@@ -9,7 +9,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import api from "../utils/api";
 
-const TodoPage = () => {
+const TodoPage = ({ setUser }) => {
   const [todoList, setTodoList] = useState([]);
   const [todoValue, setTodoValue] = useState("");
 
@@ -68,6 +68,10 @@ const TodoPage = () => {
       addTask();
     }
   }
+  const handleSignOut = () => {
+    sessionStorage.removeItem("token");
+    setUser(null);
+  }
 
   useEffect(() => {
     getTasks();
@@ -75,6 +79,12 @@ const TodoPage = () => {
 
   return (
     <Container>
+      <div className={styles.signOutButtonContainer}>
+          <button 
+            className={styles.signOutButton}
+            onClick={handleSignOut}
+          >sign out</button>
+      </div>
       <Row className={styles.addItemRow}>
         <Col xs={9} sm={10}>
           <input
