@@ -4,8 +4,8 @@ import styles from "./TodoBoard.module.css";
 const TodoBoard = ({todoList, deleteTask, toggleComplete}) => {
   return (
     <div className={styles.todoBoardContainer}>
+      <h2 className={styles.boardTitle}>Todo List</h2>
       <div className={styles.todoBoard}>
-        <h2 className={styles.boardTitle}>Todo List</h2>
         {todoList.length > 0 
           ? todoList.map((item, idx) => 
             <TodoItem 

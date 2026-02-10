@@ -1,12 +1,28 @@
 .todoBoardContainer {
   background-color: white;
   border-radius: 45px;
-  min-height: 80vh;
+  height: 80vh;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 .boardTitle {
   font-family: Impact, Haettenschweiler, "Anton", 'Arial Narrow Bold', sans-serif;
   font-weight: bolder;
+  flex-shrink: 0;
+  margin-bottom: 1rem;
+}
+.todoBoard {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 0.5rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.todoBoard::-webkit-scrollbar {
+  display: none;
 }
 .emptyMessage {
   text-align: center;
