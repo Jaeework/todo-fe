@@ -1,0 +1,24 @@
+.loaderContainer {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.default {
+  padding: 3rem;
+}
+
+.small {
+  display: inline-flex;
+  gap: 0.25rem;
+}
+.small :global(.spinner-grow) {
+  width: 0.7rem;
+  height: 0.7rem;
+}
+.small :global(.spinner-grow-sm) {
+  width: 0.5rem;
+  height: 0.5rem;
+}

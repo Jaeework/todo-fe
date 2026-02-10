@@ -50,7 +50,7 @@
     border-radius: 20px;
     color: black;
     margin: 10px;
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
 }
 
 .buttonDelete:hover {
@@ -60,5 +60,5 @@
 }
 
 .buttonDelete:active {
-    transform: scale(0.95) translateY(2px);
+    transform: scale(0.9);
 }
