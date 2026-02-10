@@ -7,6 +7,11 @@
 }
 
 .errorMessage {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 0.5rem;
   text-align: center;
@@ -15,6 +20,17 @@
   font-style: italic;
   font-weight: 700;
   margin-bottom: 1rem;
+  animation: slideDown 0.3s ease-out;
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 .formBox{
@@ -23,6 +39,7 @@
   width: 90vw;
   background-color: white;
   padding: 2rem;
+  position: relative;
 }
 .formBox h1 {
   font-family: Impact, Haettenschweiler, "Anton", 'Arial Narrow Bold', sans-serif;

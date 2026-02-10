@@ -38,8 +38,8 @@ const AuthForm = ({
 
   return (
     <div className={styles.displayCenter}>
-      {error && <div className={styles.errorMessage}>{error}</div>}
       <Form className={styles.formBox} onSubmit={handleSubmit}>
+        {error && <div className={styles.errorMessage}>{error}</div>}
         <h1>{title}</h1>
         {fields.map((field) => (
           <Form.Group
